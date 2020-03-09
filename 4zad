@@ -1,0 +1,80 @@
+#include <iostream>
+#include <conio.h>
+#include <string>
+
+using namespace std;
+
+Liczznaki(string zdanie){
+
+cout<<"Ilosc wszystkich znakow w zdaniu to: "<<(zdanie.size());
+
+}
+
+int Liczbezspacji(const string zdanie, const char znak=' ')
+        {
+                int iIloscZnakow = 0;
+
+                for(int i = 0; i < zdanie.length(); ++i)
+                        {
+                                if(zdanie[i] != znak)
+                                        {
+                                                ++iIloscZnakow;
+                                        }
+                        }
+                cout<<iIloscZnakow;
+        }
+
+int Liczbezpodanego(const string zdanie)
+        {char znak;
+         cout<<"Podaj znak do pominiecia: ";
+         cin>>znak;
+                int iIloscZnakow = 0;
+
+                for(int i = 0; i < zdanie.length(); ++i)
+                        {
+                                if(zdanie[i] != znak)
+                                        {
+                                                ++iIloscZnakow;
+                                        }
+                        }
+                cout<<iIloscZnakow;
+        }
+
+int main()
+{string zdanie;
+char znak;
+int wybor,powtorka;
+  do{
+    cout<<endl;
+    cout << "Podaj swoje zdanie: ";
+    getline(cin, zdanie);
+    cout<<endl;
+    cout<< "!----------------------------------!"<<endl;
+    cout<< "!MENU:                             !"<<endl;
+    cout<< "!----------------------------------!"<<endl;
+    cout<< "!1.Policz wszystkie znaki          !"<<endl;
+    cout<< "!2.Policz znaki bez spacji         !"<<endl;
+    cout<< "!3.Policz znaki bez wybranego znaku!"<<endl;
+    cout<< "!4.Wypisz kazdy wyraz w zdaniu     !"<<endl;
+    cout<< "!5.Wybierz aby podzielic zdanie    !"<<endl;
+    cout<< "!  w oparciu o podany znak         !"<<endl;
+    cout<< "!----------------------------------!"<<endl;
+    cout<<endl;
+    cout<< "Wybierz: ";
+    cin>> wybor;
+
+    switch(wybor)
+    {
+  case 1: Liczznaki(zdanie); break;
+  case 2: Liczbezspacji(zdanie); break;
+  case 3: Liczbezpodanego(zdanie);break;
+
+    }
+    cout<<endl;
+    cout<<"Powtorzyc program? 1-tak 2-nie ";
+    cout<<endl;
+    cin>>powtorka;
+    cout<<endl;
+    }while(powtorka==1);
+    return 0;
+}
